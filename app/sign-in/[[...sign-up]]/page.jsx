@@ -3,9 +3,9 @@ import {SignIn} from '@clerk/nextjs'
 
 const page = () => {
   return (
-    <div className='flex flex-col md:flex-row p-5 relative'>
-        <img src='signup-image.png'/>
-        <div className='absolute px-24 py-10'>
+    <div className='flex flex-col bg-gray-200 md:flex-row p-5 relative'>
+        <img src='signup-image.png' className='flex opacity-0 md:opacity-100'/>
+        <div className='md:absolute md:px-24 md:py-10'>
             <SignIn />
         </div>
     </div>
