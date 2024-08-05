@@ -3,10 +3,12 @@ import {SignUp} from '@clerk/nextjs'
 
 const page = () => {
   return (
-    <div className='flex flex-col md:flex-row justify-center pt-12 pb-12 bg-gray-200'>
+    <div className='flex flex-col md:flex-row p-5 relative'>
+    <img src='signup-image.png'/>
+    <div className='absolute px-24 py-10'>
         <SignUp />
-        <img src='login_image.png' className='rounded-lg shadow-xl'/>
     </div>
+</div>
   )
 }
 
