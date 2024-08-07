@@ -7,7 +7,7 @@ const Footer = () => {
             <div className='flex flex-col gap-3 p-5'>
                 <div className="text-2xl font-black">VASRA.CO</div>
                 <p>We have clothes that suit your style and <br/> 
-                which you're proud to wear. From <br /> 
+                which you&apos;re proud to wear. From <br /> 
                 women to men.
                 </p>
                 <div className='flex gap-3'>
@@ -52,7 +52,7 @@ const Footer = () => {
         </div>
         <hr className="h-px mx-10 my-5 border-0 bg-gray-400"></hr>
         <div className='flex flex-col md:flex-row px-5 mx-5 justify-center gap-3 md:justify-between items-center'>
-            <p>Vasra.co 2000-2024, All Rights Reserved</p>
+            <p>Vasra.co &copy; 2000-2024, All Rights Reserved</p>
             <div className='flex'>
                 <img src='/visa.png'/>
                 <img src='/mastercard.png'/>
