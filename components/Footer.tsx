@@ -51,7 +51,7 @@ const Footer = () => {
             </div>
         </div>
         <hr className="h-px mx-10 my-5 border-0 bg-gray-400"></hr>
-        <div className='flex flex-col md:flex-row px-5 mx-5 justify-center gap-3 md:justify-between items-center'>
+        <div className='flex flex-col md:flex-row md:px-5 mmd:x-5 justify-center gap-3 md:justify-between items-center'>
             <p>Vasra.co &copy; 2000-2024, All Rights Reserved</p>
             <div className='flex'>
                 <img src='/visa.png'/>

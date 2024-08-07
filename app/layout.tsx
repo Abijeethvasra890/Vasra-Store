@@ -8,6 +8,8 @@ import { useRouter } from "next/router";
 import { usePathname } from "next/navigation";
 import { metadata } from "./metadata";
 import AnnouncementBar from "../components/AnnouncementBar";
+import Footer from "@/components/Footer";
+import { useEffect, useState } from "react";
 
 
 
@@ -20,6 +22,13 @@ export default function RootLayout({
 }>) {
   
   const pathname = usePathname();
+  // const [isAuthPage, setIsAuthPage] = useState(false);
+  // useEffect(() => {
+  //   if(pathname === '/sign-in' || pathname === '/sign-up'){
+  //     setIsAuthPage(true);
+  //   }
+  // }, [pathname])
+ 
   const isAuthPage = pathname === '/sign-in' || pathname === '/sign-up';
   
   return (
@@ -30,9 +39,10 @@ export default function RootLayout({
             <meta name="description" content={metadata.description ?? "Default Desc"} />
          </head>
           <body className={inter.className}>
-          {!isAuthPage && <AnnouncementBar />}
-          {!isAuthPage && <Header />}
+            {!isAuthPage && <AnnouncementBar />}
+            {!isAuthPage && <Header />}
             {children}
+            {!isAuthPage && <Footer />}
             </body>
         </html>
       </ClerkProvider>

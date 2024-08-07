@@ -1,6 +1,5 @@
 import BrandsStrip from "@/components/BrandsStrip";
 import Category from "@/components/Category";
-import Footer from "@/components/Footer";
 import HeroComponent from "@/components/HeroComponent";
 import Newsletter from "@/components/Newsletter";
 import ProductCarousel from "@/components/ProductCarousel";
@@ -15,7 +14,6 @@ export default function Home() {
       <ProductCarousel title={"Top Selling"}/>
       <Category />
       <Newsletter />
-      <Footer />
     </div>
   );
 }
