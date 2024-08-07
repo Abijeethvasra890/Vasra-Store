@@ -55,7 +55,7 @@ const Header = () => {
           <img src="/cart_button.png" alt="Cart" className="w-8 h-8 mx-2" />
         </Link>
         {!isSignedIn ? (
-          <Link href="/sign-in">
+          <Link href="/pages/sign-in">
             <img src="/profile_button.png" alt="Profile" className="w-8 h-8 mx-2" />
           </Link>
         ) : (
