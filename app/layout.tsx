@@ -29,7 +29,8 @@ export default function RootLayout({
   //   }
   // }, [pathname])
  
-  const isAuthPage = pathname === '/sign-in' || pathname === '/sign-up';
+  const isAuthPage = pathname === '/pages/sign-in' || pathname === '/pages/sign-up';
+  //console.log(isAuthPage);
   
   return (
       <ClerkProvider>
