@@ -10,6 +10,7 @@ type props = {
 
 const ProductCarousel = ({title}: props) => {
     const width = useScreenWidth();
+    if (width === null) return null;
   return (
     <div className='flex flex-col justify-center items-center p-5'>
         <h1 className='text-4xl uppercase font-black mt-5'>{title}</h1>

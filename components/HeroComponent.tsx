@@ -3,9 +3,10 @@ import useScreenWidth from "../hooks/useScreenWidth";
 
 const HeroComponent = () => {
     const width = useScreenWidth();
+    if (width === null) return null;
   return (
     <>
-    {width !== null && width >= 1100 ? 
+    {width >= 1100 ? 
         (
         <div className="relative">
             <img src="hero-image.png" className="w-screen"/>
