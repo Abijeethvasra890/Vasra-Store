@@ -42,7 +42,7 @@ const ProductCarousel = ({title, search}: props) => {
            {Object.keys(products).map((gid) => {
                 console.log(products[gid]);
                 const product = products[gid];
-                return <ProductCarouselCard product={product} />;
+                return <ProductCarouselCard key={gid} product={product} />;
             })}
         </div>
         <button className='border-solid border-2 border-gray-400 m-5 px-12 py-2 rounded-full'>View All</button>
