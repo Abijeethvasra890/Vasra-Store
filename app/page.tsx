@@ -9,9 +9,9 @@ export default function Home() {
     <div>
       <HeroComponent />
       <BrandsStrip />
-      <ProductCarousel title={"new arrivals"}/>
+      <ProductCarousel title={"new arrivals"} search="tag:vasra_ecom AND tag:new_arrivals"/>
       <hr className="h-px mx-20 my-5 border-0 bg-gray-300"></hr>
-      <ProductCarousel title={"Top Selling"}/>
+      <ProductCarousel title={"Top Selling"} search="tag:vasra_ecom AND tag:new_arrivals"/>
       <Category />
       <Newsletter />
     </div>

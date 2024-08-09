@@ -1,43 +1,57 @@
 "use client"
 
-import React, { useEffect, useState } from 'react';
-import axios from 'axios';
+import React, { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { fetchProducts } from '@/store/features/productSlice';
+import { AppDispatch, RootState } from '@/store/store';
 
 const ProductsPage = () => {
-  const [products, setProducts] = useState<any[]>([]);
-  const [loading, setLoading] = useState<boolean>(true);
+  // const [products, setProducts] = useState<any[]>([]);
+  // const [loading, setLoading] = useState<boolean>(true);
+
+  // useEffect(() => {
+  //   const getProducts = async () => {
+  //     try {
+  //      // const response = await axios.get('/api/akeneo');
+  //       const response = await axios.get('/api/shopify');
+  //       setProducts(response.data);
+  //       console.log(response.data);
+  //       setLoading(false);
+  //     } catch (error) {
+  //       console.error('Error fetching products:', error);
+  //       console.error('Error in GET /api/akeneo/products:', error);
+  //       setLoading(false);
+  //     }
+  //   };
+
+  //   getProducts();
+  // }, []);
+
+  const dispatch = useDispatch<AppDispatch>();
+  const { products, status, error } = useSelector((state: RootState) => state.products);
 
   useEffect(() => {
-    const getProducts = async () => {
-      try {
-        const response = await axios.get('/api/akeneo');
-        setProducts(response.data);
-        console.log(response);
-        setLoading(false);
-      } catch (error) {
-        console.error('Error fetching products:', error);
-        console.error('Error in GET /api/akeneo/products:', error);
-        setLoading(false);
-      }
-    };
+    if (status === 'idle') {
+      dispatch(fetchProducts("tag:vasra_ecom"));
+    }
+  }, [status, dispatch]);
 
-    getProducts();
-  }, []);
+  if (status === 'loading') {
+    return <div>Loading...</div>;
+  }
 
-  if (loading) return <div>Loading...</div>;
+  if (status === 'failed') {
+    return <div>Error: {error}</div>;
+  }
 
+  // if (loading) return <div>Loading...</div>;
+  console.log(products);
   return (
     <div>
       <h1>Products</h1>
       <div className="product-list">
-        {products.map((product) => (
-          <div key={product.identifier} className="product-item">
-            <h2>{product.values.vasra_product_name[0].data}</h2>
-            {/* <p>{product.values.description[0].data}</p> */}
-            {/* <p>Price: {product.values.price.data[0].amount} {product.values.price.data[0].currency}</p> */}
-            Add more product details as needed
-          </div>
-        ))}
+        
+        
       </div>
     </div>
   );

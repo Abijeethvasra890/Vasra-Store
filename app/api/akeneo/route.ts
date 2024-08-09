@@ -39,7 +39,7 @@ const fetchProducts = async (token: string) => {
 
 const fetchClothingProducts = async (token: string) => {
     try {
-        const response = await axios.get(`${AKENEO_BASE_URL}/api/rest/v1/product-models`, {
+        const response = await axios.get(`${AKENEO_BASE_URL}/api/rest/v1/product-models/`, {
           headers: {
             Authorization: `Bearer ${token}`,
           },
@@ -52,13 +52,15 @@ const fetchClothingProducts = async (token: string) => {
             }),
           },
         });
-        console.log(response.data);
+        console.log(response.data._embedded);
         return response.data._embedded.items;
       } catch (error) {
         console.error('Error fetching clothing products:', error);
         throw new Error('Failed to fetch clothing products');
       }
 }
+
+
   
 
 export async function GET(req: NextRequest) {

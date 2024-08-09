@@ -10,6 +10,8 @@ import { metadata } from "./metadata";
 import AnnouncementBar from "../components/AnnouncementBar";
 import Footer from "@/components/Footer";
 import { useEffect, useState } from "react";
+import { Provider } from "react-redux";
+import { store } from "@/store/store";
 
 
 
@@ -33,6 +35,7 @@ export default function RootLayout({
   //console.log(isAuthPage);
   
   return (
+    <Provider store={store}>
       <ClerkProvider>
         <html lang="en">
           <head>
@@ -47,6 +50,6 @@ export default function RootLayout({
             </body>
         </html>
       </ClerkProvider>
-
+      </Provider>
   );
 }
